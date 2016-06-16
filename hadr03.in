@@ -17,8 +17,12 @@
 /process/list
 #
 /gun/particle proton
-/gun/energy 10 MeV
+/gun/energy 3 GeV
+#
+/analysis/h1/set 13 100  0. 100 GeV/cm
+/analysis/h1/set 7  100  -1. 100 GeV	#nuclei
+/analysis/setFileName  tester
 #
 /run/printProgress 1000
 #
-/run/beamOn 10000
+/run/beamOn 500
