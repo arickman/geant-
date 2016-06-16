@@ -56,9 +56,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 {
  Run* run 
    = static_cast<Run*>(G4RunManager::GetRunManager()->GetNonConstCurrentRun());
-         
+
   // count processes
-  // 
   const G4StepPoint* endPoint = aStep->GetPostStepPoint();
   G4VProcess* process   = 
                    const_cast<G4VProcess*>(endPoint->GetProcessDefinedStep());
@@ -103,7 +102,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     //
     G4ThreeVector momentum = endPoint->GetMomentum();
     //print the momentum
-    G4cout<< "The momentum is"<<momentum<<G4endl;
+    //G4cout<< "The momentum is"<<momentum<<G4endl;
     Q        += energy;
     Pbalance += momentum;
     //
@@ -120,6 +119,12 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4String type   = particle->GetParticleType();      
     G4double energy = (*secondary)[lp]->GetKineticEnergy();
     run->ParticleCount(name,energy);
+
+
+    //fill my histogram
+    analysis->FillH1(13,aStep->GetDeltaEnergy()/stepLength);
+
+
     //energy spectrum
     ih = 0; 
          if (particle == G4Gamma::Gamma())       ih = 2;
@@ -136,6 +141,9 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
       G4int A = particle->GetAtomicMass();
       analysis->FillH1(12, A);
     }
+
+
+
     //energy-momentum balance
     G4ThreeVector momentum = (*secondary)[lp]->GetMomentum();
     Q        += energy;
@@ -175,7 +183,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   run->CountNuclearChannel(nuclearChannel, Q);
     
   fParticleFlag.clear();
-              
+
 
 
 
