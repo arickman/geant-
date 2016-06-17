@@ -276,6 +276,7 @@ void Run::EndOfRun(G4bool print)
   //compute mean free path and related quantities
   //
   G4double dE_dx = fSumTrack /fTotalCount;
+
   G4double MeanFreePath = fSumTrack /fTotalCount;
   G4double MeanTrack2   = fSumTrack2/fTotalCount;     
   G4double rms = std::sqrt(std::fabs(MeanTrack2 - MeanFreePath*MeanFreePath));
@@ -285,8 +286,8 @@ void Run::EndOfRun(G4bool print)
   G4double massicCS  = 0.0;
   if(massicMFP > 0.0) { massicCS = 1./massicMFP; }
    
-  G4cout << "\n\n dE_dx:\t"   <<dE_dx<<" GeV/cm"
-         << " +- "                   << G4BestUnit( rms,"Length")
+  G4cout << "\n\n dE_dx:\t"   <<dE_dx<< G4BestUnit(dE_dx,"Energy/Length" )
+         << " +- "                   << G4BestUnit(rms,"Length")
          << "\tmassic: "             << G4BestUnit(massicMFP, "Mass/Surface")
          << "\n CrossSection:\t"     << CrossSection*cm << " cm^-1 "
          << "\t\tmassic: "           << G4BestUnit(massicCS, "Surface/Mass")
