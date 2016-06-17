@@ -110,7 +110,6 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     nuclearChannel += partName + " + ";
   }  
 
-
   //fill the histogram
   analysis->FillH1(13,deltaE/stepLength);
 
