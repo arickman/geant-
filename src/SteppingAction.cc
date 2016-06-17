@@ -122,7 +122,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     run->ParticleCount(name,energy);
 
 
-    //fill my histogram
+    //fill the histogram
     analysis->FillH1(13,deltaE/stepLength);
 
 
