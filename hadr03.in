@@ -19,7 +19,7 @@
 /gun/particle proton
 /gun/energy 3 GeV
 #
-/analysis/setFileName  tester
+/analysis/setFileName  tester2
 /analysis/h1/set 13 100  0. 100 GeV/cm
 /analysis/h1/set 2  100  0. 1000 keV	#gamma
 /analysis/h1/set 6  100  0. 3000 keV	#alpha
