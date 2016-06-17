@@ -20,7 +20,6 @@
 /gun/energy 3 GeV
 #
 /analysis/h1/set 13 100  0. 100 GeV/cm
-/analysis/h1/set 7  100  -1. 100 GeV	#nuclei
 /analysis/setFileName  tester
 #
 /run/printProgress 1000
