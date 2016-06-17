@@ -276,7 +276,6 @@ void Run::EndOfRun(G4bool print)
   //compute mean free path and related quantities
   //
   G4double dE_dx = fSumTrack /fTotalCount;
-
   G4double MeanFreePath = fSumTrack /fTotalCount;
   G4double MeanTrack2   = fSumTrack2/fTotalCount;     
   G4double rms = std::sqrt(std::fabs(MeanTrack2 - MeanFreePath*MeanFreePath));

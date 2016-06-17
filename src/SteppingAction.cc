@@ -71,7 +71,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   //real processes : sum track length
   //
   G4double stepLength = aStep->GetStepLength();
-  run->SumTrack(aStep->GetDeltaEnergy()/stepLength);
+  G4double deltaE     = aStep->GetDeltaEnergy();
+  run->SumTrack(deltaE/stepLength);
   
   //energy-momentum balance initialisation
   //
@@ -122,7 +123,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
 
     //fill my histogram
-    analysis->FillH1(13,aStep->GetDeltaEnergy()/stepLength);
+    analysis->FillH1(13,deltaE/stepLength);
 
 
     //energy spectrum
