@@ -109,7 +109,12 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     //
     nuclearChannel += partName + " + ";
   }  
-  
+
+
+  //fill the histogram
+  analysis->FillH1(13,deltaE/stepLength);
+
+
   //secondaries
   //
   const std::vector<const G4Track*>* secondary 
@@ -120,10 +125,6 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     G4String type   = particle->GetParticleType();      
     G4double energy = (*secondary)[lp]->GetKineticEnergy();
     run->ParticleCount(name,energy);
-
-
-    //fill the histogram
-    analysis->FillH1(13,deltaE/stepLength);
 
 
     //energy spectrum
