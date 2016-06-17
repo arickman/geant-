@@ -286,8 +286,8 @@ void Run::EndOfRun(G4bool print)
   if(massicMFP > 0.0) { massicCS = 1./massicMFP; }
    
   G4cout << "\n\n dE_dx:\t"          << G4BestUnit(dE_dx,"Energy/Length" )
-		  << "   Total entries are: " << fTotalCount
          << " +- "                   << G4BestUnit(rms,"Energy/Length")
+		 << "   Total entries are: " << fTotalCount
          << "\tmassic: "             << G4BestUnit(massicMFP, "Mass/Surface")
          << "\n CrossSection:\t"     << CrossSection*cm << " cm^-1 "
          << "\t\tmassic: "           << G4BestUnit(massicCS, "Surface/Mass")
