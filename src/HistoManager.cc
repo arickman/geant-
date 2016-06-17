@@ -79,7 +79,7 @@ void HistoManager::Book()
                   "Q = Ekin out - Ekin in",                         //10
                   "Pbalance = mag(P_out - P_in)",                   //11
                   "atomic mass of nuclei",                          //12
-				          "dE_dx"
+				  "dE_dx"
                  };  
 
   // Default values (to be reset via /analysis/h1/set command)               
