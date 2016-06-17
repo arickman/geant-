@@ -22,6 +22,10 @@
 /analysis/setFileName  tester
 /analysis/h1/set 13 100  0. 100 GeV/cm
 /analysis/h1/set 2  100  0. 1000 keV	#gamma
+/analysis/h1/set 6  100  0. 3000 keV	#alpha
+/analysis/h1/set 7  100  0. 2000 keV	#nuclei
+/analysis/h1/set 10 100  0. 3000 keV	#Q
+/analysis/h1/set 11 100  0.  100 keV	#Pbalance
 #
 /run/printProgress 1000
 #
