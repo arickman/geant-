@@ -20,7 +20,7 @@
 /gun/energy 3 GeV
 #
 /analysis/setFileName  tester3
-/analysis/h1/set 13 100  -1000 0. MeV/cm
+/analysis/h1/set 13 100  -10 0. GeV/cm
 #
 /run/printProgress 1000
 #
