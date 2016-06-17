@@ -122,7 +122,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
 
     //fill my histogram
-    //analysis->FillH1(13,aStep->GetDeltaEnergy()/stepLength);
+    analysis->FillH1(13,aStep->GetDeltaEnergy()/stepLength);
 
 
     //energy spectrum
