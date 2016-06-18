@@ -16,8 +16,8 @@
 #
 /process/list
 #
-/gun/particle mu+
-/gun/energy 3 GeV
+/gun/particle proton
+/gun/energy 100 GeV
 #
 /analysis/setFileName  tester4
 /analysis/h1/set 13 1000000  -100000. 100000. GeV/cm
