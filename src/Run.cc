@@ -346,7 +346,7 @@ void Run::EndOfRun(G4bool print)
               
  //nuclear channel count
  //
- G4cout << "\n List of nuclear reactions: \n" << G4endl; 
+ /* G4cout << "\n List of nuclear reactions: \n" << G4endl;
  std::map<G4String,NuclChannel>::iterator ic;               
  for (ic = fNuclChannelMap.begin(); ic != fNuclChannelMap.end(); ic++) { 
     G4String name    = ic->first;
@@ -358,7 +358,6 @@ void Run::EndOfRun(G4bool print)
              << "   Q = " << std::setw(wid) << G4BestUnit(Q, "Energy")
              << G4endl;           
  } 
- 
  //Gamma count
  //
  if (print && (fGammaCount > 0)) {       
@@ -402,7 +401,7 @@ void Run::EndOfRun(G4bool print)
            << " --> " << G4BestUnit(fPbalance[2], "Energy")
            << ") \n" << G4endl;
  }
-  
+  */
   //normalize histograms      
   ////G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   ////G4double factor = 1./numberOfEvent;
