@@ -19,9 +19,9 @@
 /gun/particle proton
 /gun/energy 3 GeV
 #
-/analysis/setFileName  tester3
+/analysis/setFileName  tester4
 /analysis/h1/set 13 10000  -1000. 1000. GeV/cm
 #
 /run/printProgress 1000
 #
-/run/beamOn 5000
+/run/beamOn 500000
