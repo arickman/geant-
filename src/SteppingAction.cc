@@ -39,7 +39,7 @@
 #include "G4RunManager.hh"
 #include "G4HadronicProcess.hh"
                            
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.......
 
 SteppingAction::SteppingAction(HistoManager* histo)
 : G4UserSteppingAction(),
@@ -117,6 +117,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
   G4ThreeVector momentum = endPoint->GetMomentum();
   G4double pmag = momentum.mag(); //need to take magnitude
+  G4cout << "the mag is "<< pmag << G4endl;
   //fill the Ntuple
   fHistoManager->FillNtuple(deltaE/stepLength, pmag);
 
