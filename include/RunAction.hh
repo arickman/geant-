@@ -47,6 +47,7 @@ class RunMessenger;
 class PrimaryGeneratorAction;
 class HistoManager;
 class G4Run;
+class SteppingAction;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
