@@ -37,7 +37,7 @@
 #include "DetectorConstruction.hh"
 #include "PrimaryGeneratorAction.hh"
 #include "HistoManager.hh"
-#include "SteppingAction.hh"
+//#include "SteppingAction.hh"
 #include "G4Run.hh"
 #include "G4RunManager.hh"
 #include "G4UnitsTable.hh"
@@ -52,7 +52,7 @@ RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
   : G4UserRunAction()//, dE_dx(0.), momentum(0.)
 {
  fHistoManager = new HistoManager();
- fStep         = new SteppingAction();
+// fStep         = new SteppingAction();
  fRunMessenger = new RunMessenger(this);  
 }
 

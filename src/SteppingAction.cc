@@ -143,8 +143,6 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
       analysis->FillH1(12, A);
     }
 
-
-
     //energy-momentum balance
     G4ThreeVector momentum = (*secondary)[lp]->GetMomentum();
     Q        += energy;
