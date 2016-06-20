@@ -47,7 +47,7 @@ class RunMessenger;
 class PrimaryGeneratorAction;
 class HistoManager;
 class G4Run;
-class SteppingAction;
+//class SteppingAction;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -67,7 +67,7 @@ class RunAction : public G4UserRunAction
   private:
     DetectorConstruction*      fDetector;
     PrimaryGeneratorAction*    fPrimary;
-    SteppingAction*            fStep;
+   /// SteppingAction*            fStep;
     Run*                       fRun;        
     HistoManager*              fHistoManager;
     RunMessenger*              fRunMessenger;

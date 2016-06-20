@@ -244,7 +244,7 @@ void Run::EndOfRun(G4bool print)
   G4double density = material->GetDensity();
    
   G4String Particle = fParticle->GetParticleName();    
-  G4cout << "\n The run is " << numberOfEvent << " "<< Particle << " of "
+  G4cout << "\n The run is ljhljkhlkjhlkjh" << numberOfEvent << " "<< Particle << " of "
          << G4BestUnit(fEkin,"Energy") << " through " 
          << G4BestUnit(fDetector->GetSize(),"Length") << " of "
          << material->GetName() << " (density: " 
