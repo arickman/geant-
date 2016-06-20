@@ -94,14 +94,14 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
-  // analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
-//   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
-  // analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
-  // analysisManager->FinishNtuple();
+   analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
+   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
+   analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
+   analysisManager->FinishNtuple();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-/*
+
 void HistoManager::Save()
 {
  // if (! fFactoryOn) return;
@@ -126,5 +126,5 @@ void HistoManager::Save()
   analysisManager->FillNtupleDColumn(0, 1, dE_dx);
   analysisManager->AddNtupleRow(0);
 }
-*/
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
