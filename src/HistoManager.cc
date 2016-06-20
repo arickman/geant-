@@ -118,7 +118,7 @@ void HistoManager::Save()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void HistoManager::FillNtuple(G4double dE_dx, G4double momentum)
+/*void HistoManager::FillNtuple(G4double dE_dx, G4double momentum)
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Fill 1st ntuple ( id = 0)
