@@ -114,6 +114,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   //fill the histogram
   analysis->FillH1(13,deltaE/stepLength);
 
+
+  G4ThreeVector momentum = endPoint->GetMomentum();
   //fill the Ntuple
   fHistoManager->FillNtuple(deltaE/stepLength, momentum);
 

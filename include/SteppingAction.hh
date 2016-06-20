@@ -39,13 +39,14 @@
 #include <map>
 
 class G4ParticleDefinition;
+class HistoManager;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class SteppingAction : public G4UserSteppingAction
 {
   public:
-    SteppingAction();
+    SteppingAction(HistoManager*);
    ~SteppingAction();
 
     virtual void UserSteppingAction(const G4Step*);
