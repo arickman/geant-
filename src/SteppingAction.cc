@@ -75,6 +75,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   G4double dE_dx      = deltaE/stepLength;
   run->SumTrack(dE_dx);
   
+
   //energy-momentum balance initialisation
   //
   const G4StepPoint* prePoint = aStep->GetPreStepPoint();
