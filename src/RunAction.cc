@@ -115,7 +115,7 @@ void RunAction::EndOfRunAction(const G4Run*)
 
   //fill ntuple
     //
-   fHistoManager->FillNtuple(dE_dx, momentum);
+  // fHistoManager->FillNtuple(dE_dx, momentum);
 
 
   // show Rndm status
