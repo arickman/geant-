@@ -38,7 +38,7 @@
 
 ActionInitialization::ActionInitialization(DetectorConstruction* detector)
  : G4VUserActionInitialization(),
-   fDetector(detector), fHistoManager(histo)
+   fDetector(detector)
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -64,7 +64,7 @@ void ActionInitialization::Build() const
   RunAction* runAction = new RunAction(fDetector, primary );
   SetUserAction(runAction);
   
-  SteppingAction* steppingAction = new SteppingAction(fHistoManager);
+  SteppingAction* steppingAction = new SteppingAction(HistoManager);
   SetUserAction(steppingAction);
 }  
 
