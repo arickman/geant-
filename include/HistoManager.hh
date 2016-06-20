@@ -50,6 +50,7 @@ class HistoManager
 
   private:
     void Book();
+    void Save();
     G4String fFileName;
 };
 
