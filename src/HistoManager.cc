@@ -122,8 +122,8 @@ void HistoManager::Save()
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Fill 1st ntuple ( id = 0)
-  analysisManager->FillNtupleDColumn(0, 0, momentum);
-  analysisManager->FillNtupleDColumn(0, 1, dE_dx);
+  analysisManager->FillNtupleDColumn(0, 0, dE_dx);
+  analysisManager->FillNtupleDColumn(0, 1, momentum);
   analysisManager->AddNtupleRow(0);
 }
 
