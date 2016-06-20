@@ -41,8 +41,9 @@
                            
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-SteppingAction::SteppingAction()
-: G4UserSteppingAction()
+SteppingAction::SteppingAction(HistoManager* histo)
+: G4UserSteppingAction(),
+  fHistoManager(histo)
 { }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -113,6 +114,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   //fill the histogram
   analysis->FillH1(13,deltaE/stepLength);
 
+  //fill the Ntuple
+  fHistoManager->FillNtuple(deltaE/stepLength, momentum);
 
   //secondaries
   //

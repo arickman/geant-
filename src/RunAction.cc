@@ -97,7 +97,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
     analysisManager->OpenFile();
   }     
   //initialization per event
-  dE_dx = momentum = 0.;
+   dE_dx = momentum = 0.;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
