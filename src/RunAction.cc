@@ -50,8 +50,6 @@
 
 RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
   : G4UserRunAction(),
-    fDetector(det), fPrimary(prim), fRun(0), fHistoManager(0),
-    fRunMessenger(0), fPrint(true)    
 {
  fHistoManager = new HistoManager();
  fRunMessenger = new RunMessenger(this);  
@@ -95,6 +93,8 @@ void RunAction::BeginOfRunAction(const G4Run*)
   if ( analysisManager->IsActive() ) {
     analysisManager->OpenFile();
   }     
+  //initialization per event
+  dE_dx = momentum = 0.;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -109,7 +109,14 @@ void RunAction::EndOfRunAction(const G4Run*)
     analysisManager->Write();
     analysisManager->CloseFile();
   }
-      
+
+  fStep->fillPerEvent(dE_dx, momentum);
+
+  //fill ntuple
+    //
+   fHistoManager->FillNtuple(dE_dx, momentum);
+
+
   // show Rndm status
   if (isMaster) G4Random::showEngineStatus();
 }

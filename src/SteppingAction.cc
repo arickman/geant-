@@ -63,7 +63,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
                    const_cast<G4VProcess*>(endPoint->GetProcessDefinedStep());
   run->CountProcesses(process);
   
-  // check that an real interaction occured (eg. not a transportation)
+  // check that an real interaction occurred (eg. not a transportation)
   G4StepStatus stepStatus = endPoint->GetStepStatus();
   G4bool transmit = (stepStatus==fGeomBoundary || stepStatus==fWorldBoundary);
   if (transmit) return;
@@ -72,7 +72,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   //
   G4double stepLength = aStep->GetStepLength();
   G4double deltaE     = aStep->GetDeltaEnergy();
-  run->SumTrack(deltaE/stepLength);
+  G4double dE_dx      = deltaE/stepLength;
+  run->SumTrack(dE_dx);
   
   //energy-momentum balance initialisation
   //
@@ -111,7 +112,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   }  
 
   //fill the histogram
-  analysis->FillH1(13,deltaE/stepLength);
+  analysis->FillH1(13,dE_dx);
 
 
   //secondaries

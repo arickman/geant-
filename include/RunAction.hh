@@ -66,10 +66,11 @@ class RunAction : public G4UserRunAction
   private:
     DetectorConstruction*      fDetector;
     PrimaryGeneratorAction*    fPrimary;
+    SteppingAction*            fStep;
     Run*                       fRun;        
     HistoManager*              fHistoManager;
     RunMessenger*              fRunMessenger;
-     
+    G4double  dE_dx, momentum;
     G4bool   fPrint;      //optional printing           
 };
 

@@ -33,6 +33,7 @@
 
 #include "HistoManager.hh"
 #include "G4UnitsTable.hh"
+#include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -93,6 +94,37 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
+   analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
+   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
+   analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
+   analysisManager->FinishNtuple();
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void HistoManager::Save()
+{
+ // if (! fFactoryOn) return;
+
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  analysisManager->Write();
+  analysisManager->CloseFile();
+
+//  G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
+
+  delete G4AnalysisManager::Instance();
+//  fFactoryOn = false;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void HistoManager::FillNtuple(G4double dE_dx, G4double momentum)
+{
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  // Fill 1st ntuple ( id = 0)
+  analysisManager->FillNtupleDColumn(0, 0, momentum);
+  analysisManager->FillNtupleDColumn(0, 1, dE_dx);
+  analysisManager->AddNtupleRow(0);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

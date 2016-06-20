@@ -49,7 +49,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction* det)
 {
   fParticleGun  = new G4ParticleGun(1);
   G4ParticleDefinition* particle
-           = G4ParticleTable::GetParticleTable()->FindParticle("mu+");
+           = G4ParticleTable::GetParticleTable()->FindParticle("proton");
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleEnergy(3*GeV);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
