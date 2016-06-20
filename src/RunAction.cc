@@ -49,7 +49,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
-  : G4UserRunAction(), dE_dx(0.), momentum(0.)
+  : G4UserRunAction()//, dE_dx(0.), momentum(0.)
 {
  fHistoManager = new HistoManager();
  fStep         = new SteppingAction();
@@ -95,7 +95,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
     analysisManager->OpenFile();
   }     
   //initialization per event
-  dE_dx = momentum = 0.;
+  //dE_dx = momentum = 0.;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

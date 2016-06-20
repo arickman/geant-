@@ -71,7 +71,7 @@ class RunAction : public G4UserRunAction
     Run*                       fRun;        
     HistoManager*              fHistoManager;
     RunMessenger*              fRunMessenger;
-    G4double  dE_dx, momentum;
+   // G4double  dE_dx, momentum;
     G4bool   fPrint;      //optional printing           
 };
 
