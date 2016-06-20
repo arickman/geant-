@@ -37,7 +37,7 @@
 #include "DetectorConstruction.hh"
 #include "PrimaryGeneratorAction.hh"
 #include "HistoManager.hh"
-
+#include "SteppingAction.hh"
 #include "G4Run.hh"
 #include "G4RunManager.hh"
 #include "G4UnitsTable.hh"
