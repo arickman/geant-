@@ -72,10 +72,8 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   //
   G4double stepLength = aStep->GetStepLength();
   G4double deltaE     = aStep->GetDeltaEnergy();
-  G4double dE_dx      = deltaE/stepLength;
-  run->SumTrack(dE_dx);
+  run->SumTrack(deltaE/stepLength);
   
-
   //energy-momentum balance initialisation
   //
   const G4StepPoint* prePoint = aStep->GetPreStepPoint();
@@ -113,7 +111,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   }  
 
   //fill the histogram
-  analysis->FillH1(13,dE_dx);
+  analysis->FillH1(13,deltaE/stepLength);
 
 
   //secondaries
