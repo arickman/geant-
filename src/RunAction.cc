@@ -49,7 +49,9 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
-  : G4UserRunAction()//, dE_dx(0.), momentum(0.)
+  : G4UserRunAction(),
+	fDetector(det), fPrimary(prim), fRun(0), fHistoManager(0),
+    fRunMessenger(0), fPrint(true)   //dE_dx(0.)...
 {
  fHistoManager = new HistoManager();
 // fStep         = new SteppingAction();

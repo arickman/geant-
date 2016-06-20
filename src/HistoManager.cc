@@ -33,7 +33,7 @@
 
 #include "HistoManager.hh"
 #include "G4UnitsTable.hh"
-#include "G4SystemOfUnits.hh"
+//#include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -94,10 +94,10 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
-   analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
-   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
-   analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
-   analysisManager->FinishNtuple();
+  // analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
+//   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
+  // analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
+  // analysisManager->FinishNtuple();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

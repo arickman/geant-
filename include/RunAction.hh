@@ -67,7 +67,7 @@ class RunAction : public G4UserRunAction
   private:
     DetectorConstruction*      fDetector;
     PrimaryGeneratorAction*    fPrimary;
-   /// SteppingAction*            fStep;
+   // SteppingAction*            fStep;
     Run*                       fRun;        
     HistoManager*              fHistoManager;
     RunMessenger*              fRunMessenger;
