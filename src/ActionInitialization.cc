@@ -62,6 +62,11 @@ void ActionInitialization::BuildForMaster() const
 
 void ActionInitialization::Build() const
 {
+
+ // Histo manager
+  HistoManager*  histo = new HistoManager();
+
+
   PrimaryGeneratorAction* primary = new PrimaryGeneratorAction(fDetector);
   SetUserAction(primary);
     
