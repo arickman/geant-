@@ -49,7 +49,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction* det)
 {
   fParticleGun  = new G4ParticleGun(1);
   G4ParticleDefinition* particle
-           = G4ParticleTable::GetParticleTable()->FindParticle("proton");
+           = G4ParticleTable::GetParticleTable()->FindParticle("mu+");
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleEnergy(3*GeV);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
@@ -66,7 +66,7 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  //this function is called at the begining of event
+  //this function is called at the beginning of event
   //
   G4double halfSize = 0.5*(fDetector->GetSize());
   G4double x0 = - halfSize;
