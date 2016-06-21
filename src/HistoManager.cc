@@ -61,7 +61,6 @@ void HistoManager::Book()
   analysisManager->SetFileName(fFileName);
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetActivation(true);     //enable inactivation of histograms
-  analysisManager->SetFirstNtupleId(1);
   
 
   // Create directories
@@ -105,7 +104,7 @@ void HistoManager::Book()
    analysisManager->CreateNtuple("Ntuple1", "dE_dx & momentum");
    analysisManager->CreateNtupleDColumn("dE_dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
-   analysisManager->FinishNtuple(1);
+   analysisManager->FinishNtuple(0);
   // analysisManager->SetNtupleActivation(false);
    analysisManager->SetActivation(false);
    fFactoryOn = true;
@@ -133,9 +132,9 @@ void HistoManager::Save()
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Fill Ntuple
-  analysisManager->FillNtupleDColumn(1, 0, dE_dx);
-  analysisManager->FillNtupleDColumn(1, 1, momentum);
-  analysisManager->AddNtupleRow(1);
+  analysisManager->FillNtupleDColumn(0, 0, dE_dx);
+  analysisManager->FillNtupleDColumn(0, 1, momentum);
+  analysisManager->AddNtupleRow(0);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
