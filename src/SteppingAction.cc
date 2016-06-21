@@ -116,8 +116,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
 
 
   G4ThreeVector momentum = endPoint->GetMomentum();
-  G4double pmag = momentum.mag(); //need to take magnitude
-  G4cout << "the mag is "<< pmag << G4endl;
+  G4double pmag = momentum.mag();
   //fill the Ntuple
   fHistoManager->FillNtuple(deltaE/stepLength, pmag);
 
