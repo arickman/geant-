@@ -97,7 +97,7 @@ void HistoManager::Book()
    analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
    analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
-   analysisManager->FinishNtuple();
+   analysisManager->FinishNtuple(0);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -122,9 +122,9 @@ void HistoManager::Save()
 {
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   // Fill Ntuple
-  analysisManager->FillNtupleDColumn(0, dE_dx);
-  analysisManager->FillNtupleDColumn(1, momentum);
-  analysisManager->AddNtupleRow();
+  analysisManager->FillNtupleDColumn(0, 0, dE_dx);
+  analysisManager->FillNtupleDColumn(0, 1, momentum);
+  analysisManager->AddNtupleRow(0);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
