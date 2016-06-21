@@ -105,7 +105,7 @@ void HistoManager::Book()
    analysisManager->CreateNtupleDColumn("dE_dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
-   analysis->SetNtupleActivation(false);
+   analysisManager->SetNtupleActivation(false);
    fFactoryOn = true;
 }
 
