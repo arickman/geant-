@@ -106,19 +106,14 @@ void RunAction::EndOfRunAction(const G4Run*)
 {
   if (isMaster) fRun->EndOfRun(fPrint);    
   
-
   //save histograms      
-//  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-//  if ( analysisManager->IsActive() ) {
-//    analysisManager->Write();
-//    analysisManager->CloseFile();
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  if ( analysisManager->IsActive() ) {
+    analysisManager->Write();
+    analysisManager->CloseFile();
   }
-
-  //saving the ntuple
   fHistoManager->Save();
-
-
-  //fStep->fillPerEvent(dE_dx, momentum);
+  //fStep->fillPerEvent(dE_dx, momentum);;
 
   //fill ntuple
     //
