@@ -33,7 +33,7 @@
 
 #include "HistoManager.hh"
 #include "G4UnitsTable.hh"
-//#include "G4SystemOfUnits.hh"
+#include "G4SystemOfUnits.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -61,9 +61,13 @@ void HistoManager::Book()
   analysisManager->SetFileName(fFileName);
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetActivation(true);     //enable inactivation of histograms
-  //create directories
-  analysisManager->SetNtupleDirectoryName("ntuple");
   
+
+  // Create directories
+  //  analysisManager->SetHistoDirectoryName("histo");
+  //  analysisManager->SetNtupleDirectoryName("ntuple");
+
+
   // Define histograms start values
   const G4int kMaxHisto = 14;
   const G4String id[] = {"0","1","2","3","4","5","6","7","8","9",
@@ -114,7 +118,7 @@ void HistoManager::Save()
   analysisManager->Write();
   analysisManager->CloseFile();
 
-//  G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
+  G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
 
   delete G4AnalysisManager::Instance();
   fFactoryOn = false;
