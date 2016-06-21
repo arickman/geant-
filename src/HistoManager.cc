@@ -38,7 +38,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 HistoManager::HistoManager()
-  : fFileName("Hadr03")
+  : fFileName("Hadr03"), fFactoryOn(false)
 {
   Book();
 }
@@ -98,13 +98,15 @@ void HistoManager::Book()
    analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
+
+   fFactoryOn = true;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void HistoManager::Save()
 {
- // if (! fFactoryOn) return;
+  if (! fFactoryOn) return;
 
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   analysisManager->Write();
@@ -113,7 +115,7 @@ void HistoManager::Save()
 //  G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
 
   delete G4AnalysisManager::Instance();
-//  fFactoryOn = false;
+  fFactoryOn = false;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -190,10 +190,6 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
   fParticleFlag.clear();
 
 
-
-
-
-
   // kill event after first interaction
   //
   G4RunManager::GetRunManager()->AbortEvent();  

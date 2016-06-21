@@ -52,6 +52,7 @@ class HistoManager
     void Book();
     void Save();
     G4String fFileName;
+    G4bool fFactoryOn;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
