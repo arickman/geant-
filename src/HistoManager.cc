@@ -86,7 +86,7 @@ void HistoManager::Book()
                   "Q = Ekin out - Ekin in",                         //10
                   "Pbalance = mag(P_out - P_in)",                   //11
                   "atomic mass of nuclei",                          //12
-				  "dE_dx"
+				  "dE_dx",
 				  "momentum"
                  };  
 
@@ -101,8 +101,8 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
-   analysisManager->CreateNtuple("Ntuple1", "dE/dx, momentum");
-   analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
+   analysisManager->CreateNtuple("Ntuple1", "dE_dx, momentum");
+   analysisManager->CreateNtupleDColumn("dE_dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
 
@@ -119,7 +119,7 @@ void HistoManager::Save()
   analysisManager->Write();
   analysisManager->CloseFile();
 
-  G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
+ // G4cout << "\n----> Histograms and ntuples are saved\n" << G4endl;
 
   delete G4AnalysisManager::Instance();
   fFactoryOn = false;
