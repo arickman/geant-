@@ -51,7 +51,7 @@
 RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* prim)
   : G4UserRunAction(),
 	fDetector(det), fPrimary(prim), fRun(0), fHistoManager(0),
-    fRunMessenger(0), fPrint(true), dE_dx(0.), momentum(0.)
+    fRunMessenger(0), fPrint(true)//, dE_dx(0.), momentum(0.)
 {
  fHistoManager = new HistoManager();
 // fStep         = new SteppingAction();
@@ -97,7 +97,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
     analysisManager->OpenFile();
   }     
   //initialization per event
-   dE_dx = momentum = 0.;
+  // dE_dx = momentum = 0.;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -117,7 +117,7 @@ void RunAction::EndOfRunAction(const G4Run*)
 
   //fill ntuple
     //
-   fHistoManager->FillNtuple(dE_dx, momentum);
+  // fHistoManager->FillNtuple(dE_dx, momentum);
 
 
   // show Rndm status
