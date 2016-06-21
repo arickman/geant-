@@ -106,7 +106,7 @@ void HistoManager::Book()
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
   // analysisManager->SetNtupleActivation(false);
-   analysisManager->SetActivation(false);
+  // analysisManager->SetActivation(false);
    fFactoryOn = true;
 }
 
