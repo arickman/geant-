@@ -22,7 +22,7 @@
 /analysis/setFileName  tester8
 /analysis/h1/set 13 1000000  -100000. 100000. GeV/cm
 /analysis/h1/set 14 1000000  -100000. 100000. MeV
-/analysis/ntuple/setActivation 3 true
+/analysis/ntuple/setActivation 0 true
 #
 /run/printProgress 1000
 #
