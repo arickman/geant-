@@ -101,11 +101,12 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
-   analysisManager->CreateNtuple("Ntuple1", "dE_dx, momentum");
+   analysisManager->CreateNtuple("Ntuple1", "dE_dx & momentum");
    analysisManager->CreateNtupleDColumn("dE_dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
-   analysisManager->SetNtupleActivation(false);
+  // analysisManager->SetNtupleActivation(false);
+   analysisManager->SetActivation(false);
    fFactoryOn = true;
 }
 

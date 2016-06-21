@@ -124,6 +124,9 @@ void RunAction::EndOfRunAction(const G4Run*)
   // show Rndm status
   if (isMaster) G4Random::showEngineStatus();
 }
+// Complete clean-up
+ delete G4AnalysisManager::Instance();
+
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
