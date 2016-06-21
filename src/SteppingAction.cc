@@ -111,14 +111,14 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
     nuclearChannel += partName + " + ";
   }  
 
-  //fill the histogram
-  analysis->FillH1(13,deltaE/stepLength);
-
 
   G4ThreeVector momentum = endPoint->GetMomentum();
   G4double pmag = momentum.mag();
-  //fill the Ntuple
-  fHistoManager->FillNtuple(deltaE/stepLength, pmag);
+  //fill the histograms
+   analysis->FillH1(13,deltaE/stepLength);
+   analysis->FillH1(14,pmag);
+   //fill the Ntuple
+    fHistoManager->FillNtuple(deltaE/stepLength, pmag);
 
   //secondaries
   //

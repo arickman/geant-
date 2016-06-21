@@ -69,9 +69,9 @@ void HistoManager::Book()
 
 
   // Define histograms start values
-  const G4int kMaxHisto = 14;
+  const G4int kMaxHisto = 15;
   const G4String id[] = {"0","1","2","3","4","5","6","7","8","9",
-                         "10","11","12","13"};
+                         "10","11","12","13", "14"};
   const G4String title[] = 
                 { "dummy",                                          //0
                   "kinetic energy of scattered primary particle",   //1
@@ -87,6 +87,7 @@ void HistoManager::Book()
                   "Pbalance = mag(P_out - P_in)",                   //11
                   "atomic mass of nuclei",                          //12
 				  "dE_dx"
+				  "momentum"
                  };  
 
   // Default values (to be reset via /analysis/h1/set command)               
