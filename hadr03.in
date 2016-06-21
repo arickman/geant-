@@ -21,7 +21,7 @@
 #
 /analysis/setFileName  tester7
 /analysis/h1/set 13 1000000  -100000. 100000. GeV/cm
-/analysis/h1/set 14 1000000  -100000. 100000. GeV/c
+/analysis/h1/set 14 1000000  -100000. 100000. MeV
 #
 /run/printProgress 1000
 #
