@@ -94,7 +94,7 @@ void HistoManager::Book()
     G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
     analysisManager->SetH1Activation(ih, false);
   }
-   analysisManager->CreateNtuple("Ntuple1", "dE/dx vs. momentum");
+   analysisManager->CreateNtuple("Ntuple1", "dE/dx, momentum");
    analysisManager->CreateNtupleDColumn("dE/dx"); // column Id = 0
    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
    analysisManager->FinishNtuple(0);
