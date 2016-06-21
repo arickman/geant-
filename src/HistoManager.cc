@@ -61,6 +61,8 @@ void HistoManager::Book()
   analysisManager->SetFileName(fFileName);
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetActivation(true);     //enable inactivation of histograms
+  //create directories
+  analysisManager->SetNtupleDirectoryName("ntuple");
   
   // Define histograms start values
   const G4int kMaxHisto = 14;

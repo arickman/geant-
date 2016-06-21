@@ -47,7 +47,7 @@ class HistoManager
    HistoManager();
   ~HistoManager();
   void FillNtuple(G4double dE_dx, G4double momentum);
-  void Save();
+  void Save()
 
   private:
     void Book();

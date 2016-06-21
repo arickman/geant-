@@ -21,6 +21,8 @@
 #
 /analysis/setFileName  tester6
 /analysis/h1/set 13 1000000  -100000. 100000. GeV/cm
+/analysis/ntuple/set 
+/
 #
 /run/printProgress 1000
 #
