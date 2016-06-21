@@ -106,8 +106,6 @@ void RunAction::EndOfRunAction(const G4Run*)
 {
   if (isMaster) fRun->EndOfRun(fPrint);    
   
-  //saving the ntuple
-    fHistoManager->Save();
 
   //save histograms      
 //  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
