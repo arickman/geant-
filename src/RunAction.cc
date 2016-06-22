@@ -116,10 +116,11 @@ void RunAction::EndOfRunAction(const G4Run*)
  // if ( analysisManager->IsActive() ) {
     analysisManager->Write();
     analysisManager->CloseFile();
+    delete G4AnalysisManager::Instance();
  // }
  // G4Ntuple* ntuple1 = analysisManager->GetNtuple();
-   fHistoManager->Save();
-  //fStep->fillPerEvent(dE_dx, momentum);;
+  // fHistoManager->Save();
+  //fStep->fillPerEvent(dE_dx, momentum);
 
   //fill ntuple
     //
