@@ -120,6 +120,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
    //fill the Ntuple
    fHistoManager->FillNtuple(deltaE/stepLength, pmag);
    //fHistoManager->FillNtuple(13,14);
+   fHistoManager->Save();
 
   //secondaries
   //
