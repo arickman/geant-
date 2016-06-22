@@ -93,9 +93,14 @@ void RunAction::BeginOfRunAction(const G4Run*)
   //histograms
   //
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-  if ( analysisManager->IsActive() ) {
-    analysisManager->OpenFile();
-  }     
+ // if ( analysisManager->IsActive() ) {
+    analysisManager->OpenFile("Hadr03");
+    analysisManager->CreateNtuple("Ntuple1", "dE_dx & momentum");
+    analysisManager->CreateNtupleDColumn("dE_dx"); // column Id = 0
+    analysisManager->CreateNtupleDColumn("momentum"); // column Id = 1
+    analysisManager->FinishNtuple(0);
+
+//  }
   //initialization per event
   // dE_dx = momentum = 0.;
 }
@@ -108,10 +113,10 @@ void RunAction::EndOfRunAction(const G4Run*)
   
   //save histograms      
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-  if ( analysisManager->IsActive() ) {
+ // if ( analysisManager->IsActive() ) {
     analysisManager->Write();
     analysisManager->CloseFile();
-  }
+ // }
  // G4Ntuple* ntuple1 = analysisManager->GetNtuple();
    fHistoManager->Save();
   //fStep->fillPerEvent(dE_dx, momentum);;
