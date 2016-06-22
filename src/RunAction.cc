@@ -112,8 +112,8 @@ void RunAction::EndOfRunAction(const G4Run*)
     analysisManager->Write();
     analysisManager->CloseFile();
   }
-  G4Ntuple* ntuple1 = analysisManager->GetNtuple();
-  fHistoManager->Save();
+ // G4Ntuple* ntuple1 = analysisManager->GetNtuple();
+  //fHistoManager->Save();
   //fStep->fillPerEvent(dE_dx, momentum);;
 
   //fill ntuple
@@ -125,7 +125,7 @@ void RunAction::EndOfRunAction(const G4Run*)
   if (isMaster) G4Random::showEngineStatus();
 }
 // Complete clean-up
- //delete G4AnalysisManager::Instance();
+  delete G4AnalysisManager::Instance();
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
