@@ -125,7 +125,7 @@ void RunAction::EndOfRunAction(const G4Run*)
   if (isMaster) G4Random::showEngineStatus();
 }
 // Complete clean-up
-  delete G4AnalysisManager::Instance();
+ // delete G4AnalysisManager::Instance();
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
