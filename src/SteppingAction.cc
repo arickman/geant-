@@ -118,6 +118,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep)
    analysis->FillH1(13,deltaE/stepLength);
    analysis->FillH1(14,pmag);
    //fill the Ntuple
+   if (pmag>0)
    fHistoManager->FillNtuple(deltaE/stepLength, pmag);
    //fHistoManager->FillNtuple(13,14);
    //fHistoManager->Save();

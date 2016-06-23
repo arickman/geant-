@@ -43,7 +43,7 @@
 
 #include "G4SystemOfUnits.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.......
 
 GammaPhysics::GammaPhysics(const G4String& name)
 :  G4VPhysicsConstructor(name)
